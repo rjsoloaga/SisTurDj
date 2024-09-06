@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import bienvenida, horaActual, index
+from .views import bienvenida, horaActual, index, plantillaParametro
 
 
 urlpatterns = [
@@ -24,4 +24,5 @@ urlpatterns = [
     path('bienvenida/', bienvenida),
     path('horaActual/', horaActual),
     path('index/', index),
+    path('plantillaParametro/', plantillaParametro),
 ]
