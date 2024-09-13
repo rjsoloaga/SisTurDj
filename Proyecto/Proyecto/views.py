@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
+#from django.template import loader
+from django.template.loader import get_template
 
 # Request: Para realizar peticiones.
 # HttpResponse: Para enviar la respuesta usando el protocolo HTTP.
@@ -29,7 +31,7 @@ def index(request):
     
     return HttpResponse(documento)
 
-def plantillaParametro(request):
+"""def plantillaParametro(request):
     BodyCenter = "Body Center"
     # Abrimos el documento que contiene la plantilla:
     plantillaExterna = open("C:\\Users\\javie\\OneDrive\\Escritorio\\SisTurDj\\Proyecto\\Proyecto\\templates\\nombreEmpresa.html")
@@ -42,4 +44,20 @@ def plantillaParametro(request):
     # Renderizar el documento:
     documento = template.render(contexto)
     
+    return HttpResponse(documento)"""
+
+def plantillaCargador(request):
+    BodyCenter = "Ciro Soloaga"
+    # Abrimos el documento que contiene la plantilla:
+    plantillaCargador = get_template('plantillaCargador.html')
+    # Cargamos el documento en una variable de tipo 'Template':
+    #template = Template(plantillaExterna.read())
+    # Cerrar el documento externo que hemos abierto:
+    #plantillaExterna.close()
+    # Crear un contexto:
+    #contexto = Context({"nombreEmpresa": BodyCenter})
+    # Renderizar el documento:
+    documento = plantillaCargador.render({"nombreEmpresa": BodyCenter})
+    
     return HttpResponse(documento)
+

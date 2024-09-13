@@ -54,7 +54,7 @@ ROOT_URLCONF = 'Proyecto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:\\Users\\javie\\OneDrive\\Escritorio\\SisTurDj\\Proyecto\\Proyecto\\templates\\'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
