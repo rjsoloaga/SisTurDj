@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
-#from django.template import loader
 from django.template.loader import get_template
+from django.shortcuts import render
 
 # Request: Para realizar peticiones.
 # HttpResponse: Para enviar la respuesta usando el protocolo HTTP.
@@ -49,7 +49,7 @@ def index(request):
 def plantillaCargador(request):
     BodyCenter = "Ciro Soloaga"
     # Abrimos el documento que contiene la plantilla:
-    plantillaCargador = get_template('plantillaCargador.html')
+    plantillaCargador = get_template('Servicios.html')
     # Cargamos el documento en una variable de tipo 'Template':
     #template = Template(plantillaExterna.read())
     # Cerrar el documento externo que hemos abierto:
@@ -61,3 +61,9 @@ def plantillaCargador(request):
     
     return HttpResponse(documento)
 
+def Servicios(request):
+    return render(request, 'Servicios.html', {})
+
+def plantillaAboutUs(request):
+    return render(request, 'aboutus.html', {})
+    
