@@ -66,4 +66,4 @@ def Servicios(request):
 
 def plantillaAboutUs(request):
     return render(request, 'aboutus.html', {})
-    
+

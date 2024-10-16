@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from .views import bienvenida, horaActual, index, Servicios
 from .views import plantillaAboutUs
+from Aplicaciones.usuarios.views import *
+from Aplicaciones.estetica.views import *
+
 
 
 urlpatterns = [
@@ -27,5 +30,6 @@ urlpatterns = [
     path('index/', index),
     #path('plantillaParametro/', plantillaParametro),
     path('Servicios/', Servicios),
-    path('plantillaAboutUs/', plantillaAboutUs)
+    path('plantillaAboutUs/', plantillaAboutUs),
+    path('', home)
 ]

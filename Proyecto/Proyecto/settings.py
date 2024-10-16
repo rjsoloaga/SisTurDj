@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Aplicaciones.Usuarios',
+    'Aplicaciones.usuarios',
+    'Aplicaciones.estetica',
 ]
 
 MIDDLEWARE = [
@@ -77,10 +78,15 @@ WSGI_APPLICATION = 'Proyecto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'BodyCenter.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bodycenter',  # Nombre de tu base de datos
+        'USER': 'root',  # Usuario de MySQL (cámbialo si no usas root)
+        'PASSWORD': 'root',  # Reemplaza 'tu_contraseña' con la contraseña real del usuario
+        'HOST': 'localhost',  # O '127.0.0.1' si es local
+        'PORT': '3306',  # Puerto predeterminado de MySQL
     }
 }
+
 
 
 # Password validation
